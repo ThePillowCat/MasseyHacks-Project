@@ -123,6 +123,7 @@ function moveBall() {
     ballY = 300
   }
   else if (ballX+10>800) {
+    ballX = 790
     player1Score++
     if (player1Score == 3) {
       winner = 1
@@ -135,10 +136,12 @@ function moveBall() {
   if (ballY-10<0 || ballY+10>600) {
     vY*=-1
   }
-  if (ballY >= paddleY && ballY <= paddleY+100 && ballX-10<=paddleX+25 && ballX-10>=paddleX) {
+  if (ballY > paddleY && ballY < paddleY+100 && ballX-10<paddleX+25 && ballX-10>paddleX) {
+    ballX = paddleX+10+25
     vX*=-1
   }
-  if (ballY >= paddleY2 && ballY <= paddleY2+100 && ballX+10>=paddleX2 && ballX+10<=paddleX2+25) {
+  if (ballY >= paddleY2 && ballY <= paddleY2+100 && ballX+10> paddleX2 && ballX+10<=paddleX2+25) {
+    ballX = paddleX2-10
     vX*=-1
   }
 }
