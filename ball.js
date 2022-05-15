@@ -22,7 +22,7 @@ function draw() {
     background(213);
     level2();
   }else if (screen ==3){
-    background(random(255));
+    background(223);
     level3();
   }else if (screen == 4){
     
