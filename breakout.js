@@ -92,6 +92,13 @@ function winScreen() {
     ballY = 400
     vY = -Math.abs(vY)
     screen = "game"
+    grid = []
+    for(i=0;i<4;i++) {
+      grid.push([])
+      for(j=0;j<16;j++) {
+        grid[i].push([(j)*50, true])
+      }
+    }
   }
 }
 
