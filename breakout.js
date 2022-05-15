@@ -218,18 +218,17 @@ function checkIfHitSides()  {
 
 function checkIfHitPaddle() {
   if (ballX>paddleX && ballX<paddleX+100 && ballY+10>paddleY && ballY+10< paddleY+20) {
+    ballY=paddleY-10
     vY*=-1
     return
   }
   if (ballY>paddleY && ballY<paddleY+20 && ballX+10>paddleX && ballX+10 < paddleX+100) {
-    vX*=-1
-    return
-  }
-  if (ballY>paddleY && ballY<paddleY+20 && ballX+10>paddleX && ballX+10 < paddleX+100) {
+    ballX = paddleX-10
     vX*=-1
     return
   }
   if (ballY>paddleY && ballY<paddleY+20 && ballX-10<paddleX+100 && ballX-10 > paddleX) {
+    ballX = paddleX+100+10
     vX*=-1
     return
   }
