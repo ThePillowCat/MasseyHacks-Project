@@ -119,6 +119,7 @@ function gameOver() {
     ballY = 400
     vY = -Math.abs(vY)
     screen = "game"
+    score = 0
   }
 }
 
@@ -171,7 +172,6 @@ function moveBall() {
   }
   if (lives == 0) {
     screen = "gameover"
-    score = 0
   }
   if (ballsHit > 63) {
     screen = "win"
