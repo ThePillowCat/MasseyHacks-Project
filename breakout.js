@@ -171,6 +171,7 @@ function moveBall() {
   }
   if (lives == 0) {
     screen = "gameover"
+    score = 0
   }
   if (ballsHit > 63) {
     screen = "win"
@@ -225,6 +226,10 @@ function checkIfHitPaddle() {
     return
   }
   if (ballY>paddleY && ballY<paddleY+20 && ballX+10>paddleX && ballX+10 < paddleX+100) {
+    vX*=-1
+    return
+  }
+  if (ballY>paddleY && ballY<paddleY+20 && ballX-10<paddleX+100 && ballX-10 > paddleX) {
     vX*=-1
     return
   }
