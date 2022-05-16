@@ -9,6 +9,7 @@ let lives = 3
 let score = 0
 let ballsHit = 0
 let scores = [500, 400, 300, 200]
+let isPaused = false
 
 function setup() {
   createCanvas(800, 600);
@@ -30,22 +31,24 @@ for(i=0;i<4;i++) {
 }
 
 function draw() {
-  clear()
-  background(0);
-  if (screen == "start") {
-    startScreen()
-  }
-  else if (screen == "game") {
-    UI()
-    drawGrid()
-    movePaddle()
-    moveBall()
-  }
-  else if (screen == "gameover") {
-    gameOver()
-  }
-  else if (screen == "win") {
-    winScreen()
+  if(!isPaused) {
+    clear()
+    background(0);
+    if (screen == "start") {
+      startScreen()
+    }
+    else if (screen == "game") {
+      UI()
+      drawGrid()
+      movePaddle()
+      moveBall()
+    }
+    else if (screen == "gameover") {
+      gameOver()
+    }
+    else if (screen == "win") {
+      winScreen()
+    }
   }
 }
 
@@ -239,5 +242,17 @@ function checkIfHitPaddle() {
     ballX = paddleX+100+10
     vX*=-1
     return
+  }
+}
+
+
+function keyPressed() {
+  if(keyIsDown(32)) {
+    if(isPaused) {
+      isPaused = false
+    }
+    else {
+      isPaused = true
+    }
   }
 }
