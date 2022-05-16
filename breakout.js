@@ -92,6 +92,7 @@ function winScreen() {
     ballY = 400
     vY = -Math.abs(vY)
     screen = "game"
+    score = 0
     grid = []
     for(i=0;i<4;i++) {
       grid.push([])
